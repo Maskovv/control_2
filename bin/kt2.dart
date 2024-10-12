@@ -1,5 +1,9 @@
-import 'package:kt2/kt2.dart' as kt2;
+import './provider/fake_api_provider.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${kt2.calculate()}!');
+void main() async {
+  final provider = FakeApiProvider();
+  final result = await provider.fetchCarts();  // Исправлено на fetchCarts
+  for (var cart in result) {
+    print(cart);
+  }
 }
